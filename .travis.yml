@@ -1,32 +1,26 @@
 language: python
 python:
-  - "2.7"
-
+- '2.7'
 cache:
   directories:
-    - $HOME/.pip-cache/
-    - /home/travis/virtualenv/python2.7
-    - node_modules	
-
+  - "$HOME/.pip-cache/"
+  - "/home/travis/virtualenv/python2.7"
+  - node_modules
 branches:
   only:
   - master
-
 before_install:
-  - npm install -g grunt-cli
-  - npm install -g bower
-
+- npm install -g grunt-cli
+- npm install -g bower
 install:
-  - npm install
-  - bower install
-  - pip install -r requirements/prod.py --download-cache $HOME/.pip-cache
-
+- npm install
+- bower install
+- pip install -r requirements/prod.py --download-cache $HOME/.pip-cache
 script:
-  - grunt prod
-
+- grunt prod
 after_success:
-  - grunt publish
-
+- grunt publish
 env:
   global:
-    secure: D8gvfMPVob6pMlZ8bqzmJuGPFydJ9FsiRKlBau8byPS01rQZQ3Cn3ap8Z9y28Yi7piZ9w7qiU6AghQ12fwz14pKeDTzg2HhcopIU/hpf3y1nz+zLZXQQ4HxkFGBSL3vixhgaKcuw9y6RQEJwGyQWl5Mn0CArFi3CnnO1mCVsODc=
+  - secure: D8gvfMPVob6pMlZ8bqzmJuGPFydJ9FsiRKlBau8byPS01rQZQ3Cn3ap8Z9y28Yi7piZ9w7qiU6AghQ12fwz14pKeDTzg2HhcopIU/hpf3y1nz+zLZXQQ4HxkFGBSL3vixhgaKcuw9y6RQEJwGyQWl5Mn0CArFi3CnnO1mCVsODc=
+  - secure: DKIrwdqpI4NPYp4aulvQ1S+rq/JFyarHcXT6Al3otrcjlqoW0tT0Ep19h/z++s3aJW363zWrhrGXviXyS+Y4N/6c4lwroYKxGZlzew2LcMtusJn8SfMmlOZJshNPgMpIPjsyz03MKm0hBmaLow2g2WvFvetq5iiZikbVe+hiLxQ=
