@@ -6,7 +6,7 @@ LOCALE="en_US.utf8"
 TIMEZONE = 'Asia/Saigon'
 
 SITENAME = "Jolly's Blog!"
-SITEURL = "blog.bottofy.me"
+SITEURL = "http://blog.bottofy.me"
 
 DISPLAY_PAGES_ON_MENU = True
 WITH_PAGINATION = True
