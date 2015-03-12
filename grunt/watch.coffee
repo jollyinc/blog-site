@@ -19,11 +19,20 @@ module.exports =
       livereload: true
     files: [
       '<%= paths.pelican_content %>/**/*.rst'
+      '<%= paths.pelican_content %>/**/*.md'
       '<%= paths.pelican_theme %>/**/*.*'
-
       '<%= paths.css %>/**/*.{scss,css}'
       '<%= paths.js %>/**/*.{coffee,js}'
     ]
+
+  pelican:
+    files: [
+      '<%= paths.pelican_content %>/**/*.rst',
+      '<%= paths.pelican_content %>/**/*.md'
+      ]
+    tasks: [
+      'build_pelican_dev'
+    ] 
 
   stylesheets:
     files: ['<%= paths.scss %>/*.scss']

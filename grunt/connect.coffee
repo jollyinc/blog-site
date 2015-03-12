@@ -8,6 +8,5 @@ module.exports =
       base: 'output'
       port: 9000
       hostname: 'localhost'
-      livereload: true
-      keepalive: true
+      livereload: 35731
       open: true

@@ -14,4 +14,6 @@ Pygments==2.0.2
 python-dateutil==2.4.1
 pytz==2014.10
 six==1.9.0
+smartypants==1.8.6
+typogrify==2.0.7
 Unidecode==0.4.17

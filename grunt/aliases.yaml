@@ -56,9 +56,9 @@ build:
 dev:
   - 'build'
   - 'build_pelican_dev'
+  - 'notify:compile'
   - 'connect:dev'
   - 'open:dev'
-  - 'notify:compile'
   - 'watch'
 
 #===================== DEPLOY STUFFS
