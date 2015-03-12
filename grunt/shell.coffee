@@ -12,7 +12,7 @@ module.exports =
 
   pelican_publish_github:
     command: ['ghp-import -n <%= paths.pelican_output %>',
-              'git push -fq https://${GH_TOKEN}@github.com/$(TRAVIS_REPO_SLUG).git gh-pages > /dev/null'
+              'git push -fq https://${GH_TOKEN}@github.com/$TRAVIS_REPO_SLUG.git gh-pages > /dev/null'
              ].join('&&')
 
     
