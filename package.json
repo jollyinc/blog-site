@@ -25,7 +25,6 @@
     "grunt-sass": "^0.16.0",
     "grunt-scss-lint": "^0.3.3",
     "grunt-shell": "^1.1.1",
-    "grunt-text-replace": "^0.3.12",
     "load-grunt-config": "^0.16.0",
     "time-grunt": "^1.0.0",
     "grunt-sitemap": "^1.2.1"

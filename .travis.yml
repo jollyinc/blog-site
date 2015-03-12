@@ -1,22 +1,30 @@
 language: python
+python:
+  - "2.7"
+
+cache:
+  directories:
+    - $HOME/.pip-cache/
+    - /home/travis/virtualenv/python2.7
 
 branches:
   only:
   - master
 
 before_install:
-
-- npm install -g grunt-cli
-- npm install -g bower
+  - npm install -g grunt-cli
+  - npm install -g bower
 
 install:
-- npm install
-- bower install
-- pip install -r requirements/prod.py
+  - npm install
+  - bower install
+  - pip install -r requirements/prod.py --download-cache $HOME/.pip-cache
 
 script:
-- grunt prod
-- grunt publish
+  - grunt prod
+
+after_success:
+  - grunt publish
 
 env:
   global:
