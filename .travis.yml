@@ -6,6 +6,7 @@ cache:
   directories:
     - $HOME/.pip-cache/
     - /home/travis/virtualenv/python2.7
+    - node_modules	
 
 branches:
   only:
