@@ -1,0 +1,23 @@
+language: python
+
+branches:
+  only:
+  - master
+
+before_install:
+
+- npm install -g grunt-cli
+- npm install -g bower
+
+install:
+- npm install
+- bower install
+- pip install -r requirements/prod.py
+
+script:
+- grunt prod
+- grunt publish
+
+env:
+  global:
+    secure: D8gvfMPVob6pMlZ8bqzmJuGPFydJ9FsiRKlBau8byPS01rQZQ3Cn3ap8Z9y28Yi7piZ9w7qiU6AghQ12fwz14pKeDTzg2HhcopIU/hpf3y1nz+zLZXQQ4HxkFGBSL3vixhgaKcuw9y6RQEJwGyQWl5Mn0CArFi3CnnO1mCVsODc=

@@ -1,0 +1,70 @@
+# Aliases for registered tasks
+# https://github.com/firstandthird/load-grunt-config#aliases
+
+lint_stylesheets:
+  - 'scsslint'
+
+lint_scripts:
+  - 'coffeelint:scripts'
+
+lint:
+  - 'lint_stylesheets'
+  - 'lint_scripts'
+
+build_vendors:
+  - 'bower_concat'
+
+build_stylesheets:
+  - 'clean:stylesheets'
+  - 'sass'
+  - 'autoprefixer'
+  - 'replace:stylesheets'
+
+build_scripts:
+  - 'clean:scripts'
+  - 'coffee:scripts'
+
+build_images:
+  - 'clean:images'
+  - 'imagemin'
+
+build_bower_fonts:
+  - 'copy:font_bower'
+
+build_bower:
+  - 'build_bower_fonts'
+  - 'bower_concat'
+
+#===================== PELICAN - RELATED
+
+build_pelican_dev:
+  - 'clean:pelican'			
+  - 'shell:pelican_build_dev'
+
+build_pelican_prod:
+  - 'clean:pelican'	
+  - 'shell:pelican_build_prod'
+
+#===================== GLUE THEM ALL TOGETHER
+build:
+  - 'build_stylesheets'
+  - 'build_scripts'
+  - 'build_bower'
+  - 'build_images'
+
+#===================== DEV STUFFS
+dev:
+  - 'build'
+  - 'build_pelican_dev'
+  - 'connect:dev'
+  - 'open:dev'
+  - 'notify:compile'
+  - 'watch'
+
+#===================== DEPLOY STUFFS
+prod:
+  - 'build'
+  - 'build_pelican_prod'
+
+publish:
+  - 'shell:pelican_publish_github'
