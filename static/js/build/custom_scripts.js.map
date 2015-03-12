@@ -1,0 +1,10 @@
+{
+  "version": 3,
+  "file": "custom_scripts.js",
+  "sourceRoot": "../coffee/",
+  "sources": [
+    "custom_scripts.coffee"
+  ],
+  "names": [],
+  "mappings": "AAAA;AAAA,EAAA,YAAA,CAAA;AAAA,EACA,CAAC,CAAC,IAAF,GAAS,EADT,CAAA;AAAA"
+}
